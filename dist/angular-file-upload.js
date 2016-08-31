@@ -195,7 +195,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	         * @param {Object} [options]
 	         * @constructor
 	         */
-	
 	        function FileUploader(options) {
 	            _classCallCheck(this, FileUploader);
 	
@@ -1064,7 +1063,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	         * @param {File|HTMLInputElement|Object} fileOrInput
 	         * @constructor
 	         */
-	
 	        function FileLikeObject(fileOrInput) {
 	            _classCallCheck(this, FileLikeObject);
 	
@@ -1139,7 +1137,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	         * @param {Object} options
 	         * @constructor
 	         */
-	
 	        function FileItem(uploader, some, options) {
 	            _classCallCheck(this, FileItem);
 	
@@ -1431,7 +1428,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	         * @param {String} options.prop
 	         * @constructor
 	         */
-	
 	        function FileDirective(options) {
 	            _classCallCheck(this, FileDirective);
 	
@@ -1534,7 +1530,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	         * @param {Object} options
 	         * @constructor
 	         */
-	
 	        function FileSelect(options) {
 	            _classCallCheck(this, FileSelect);
 	
@@ -1585,6 +1580,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	        FileSelect.prototype.onChange = function onChange() {
+	            if (this.uploader.queue.length && this.uploader.queueLimit === 1 && this.element[0].files.length) {
+	                this.uploader.clearQueue();
+	            }
 	            var files = this.uploader.isHTML5 ? this.element[0].files : this.element[0];
 	            var options = this.getOptions();
 	            var filters = this.getFilters();
@@ -1639,7 +1637,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	         * @param {Object} options
 	         * @constructor
 	         */
-	
 	        function FileDrop(options) {
 	            _classCallCheck(this, FileDrop);
 	
@@ -1798,7 +1795,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	         * @param {Object} options
 	         * @constructor
 	         */
-	
 	        function FileOver(options) {
 	            _classCallCheck(this, FileOver);
 	

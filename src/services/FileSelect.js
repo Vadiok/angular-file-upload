@@ -59,6 +59,9 @@ export default function __identity($compile, FileDirective) {
          * Event handler
          */
         onChange() {
+            if (this.uploader.queue.length && this.uploader.queueLimit === 1 && this.element[0].files.length) {
+                this.uploader.clearQueue();
+            }
             var files = this.uploader.isHTML5 ? this.element[0].files : this.element[0];
             var options = this.getOptions();
             var filters = this.getFilters();
